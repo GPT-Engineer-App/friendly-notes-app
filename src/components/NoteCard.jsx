@@ -22,7 +22,7 @@ const NoteCard = ({ note, deleteNote, editNote, addTag, removeTag }) => {
     }
   };
 
-  const bgColors = ['bg-blue-100', 'bg-green-100', 'bg-yellow-100'];
+  const bgColors = ['bg-blue-100', 'bg-green-100', 'bg-yellow-100', 'bg-purple-100'];
   const bgColor = bgColors[note.id % bgColors.length];
 
   return (
@@ -30,12 +30,12 @@ const NoteCard = ({ note, deleteNote, editNote, addTag, removeTag }) => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute top-2 right-2"
+        className="absolute top-2 right-2 h-6 w-6 p-0"
         onClick={() => deleteNote(note.id)}
       >
         <X className="h-4 w-4" />
       </Button>
-      <CardContent className="pt-8">
+      <CardContent className="pt-8 pb-4">
         {isEditing ? (
           <div>
             <Input
@@ -56,7 +56,7 @@ const NoteCard = ({ note, deleteNote, editNote, addTag, removeTag }) => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-4 w-4 ml-1"
+                className="h-4 w-4 ml-1 p-0"
                 onClick={() => removeTag(note.id, tag)}
               >
                 <X className="h-3 w-3" />
@@ -70,9 +70,9 @@ const NoteCard = ({ note, deleteNote, editNote, addTag, removeTag }) => {
             placeholder="Add tag"
             value={newTag}
             onChange={(e) => setNewTag(e.target.value)}
-            className="flex-grow"
+            className="flex-grow text-sm h-8"
           />
-          <Button type="submit">Add</Button>
+          <Button type="submit" className="h-8 text-sm">+</Button>
         </form>
       </CardContent>
     </Card>

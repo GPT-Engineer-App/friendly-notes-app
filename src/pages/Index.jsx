@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import NoteCard from '@/components/NoteCard';
 import SearchBar from '@/components/SearchBar';
 import AddNote from '@/components/AddNote';
@@ -40,7 +38,6 @@ const Index = () => {
 
   return (
     <div className="container mx-auto p-4 max-w-3xl">
-      <h1 className="text-3xl font-bold mb-6">Notes App</h1>
       <SearchBar setSearchTerm={setSearchTerm} />
       <AddNote addNote={addNote} />
       <div className="space-y-4 mt-6">
